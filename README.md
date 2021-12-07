@@ -13,6 +13,13 @@ Data is returned from the main() function run in index.py as well as displayed o
 4. `python -m unittest tests.test_name` to run specific unit_tests all of which can be found in `src/tests`
  
  
+ Here are some fun commands to try:
+ - `python index.py -p 10 --customer-rating 4`
+ - `python index.py -n grill`
+ - `python index.py -n grill -c korean`
+ - `python index.py -n grill -c korean -p 15`
+ - `python index.py -d 12 --customer-rating 5 -n delic`
+ 
 ## Assumptions Made
 When looking at the criteria:
 #### Restaurant Name
