@@ -1,7 +1,9 @@
 # Fullstack Technical Assessment
 
 
-Implemented as a command line program, the program allows the user to input criteria to find the "best-matched restaurants". The "Function" can be tested against using the command line by passing in arguments, therefore most argument validation occurs at the point of reading argument input. Data is returned from the main() function run in index.py as well as displayed on the command line in a table format for easy readability.
+Implemented as a command line program, the program allows the user to input criteria to find the "best-matched restaurants". The "Function" can be tested against using the command line by passing in arguments, therefore most argument validation occurs at the point of reading argument input (In regards to requirement #2 "If parameter values are invalid, return an error message.")
+
+Data is returned from the main() function run in index.py as well as displayed on the command line in a table format for easy readability.
 
 ## How to Run
 
