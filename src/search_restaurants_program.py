@@ -38,14 +38,18 @@ class FilterRestaurantsCSVProgram(object):
         with open('csv/'+self.restaurant_file_name, 'r') as csvfile:
             restaurant_reader = csv.DictReader(csvfile)
             for restaurant_dict in restaurant_reader:
-
-                restaurant: Restaurant = Restaurant(
-                    name=restaurant_dict['name'],
-                    customer_rating=int(restaurant_dict['customer_rating']),
-                    distance=float(restaurant_dict['distance']),
-                    average_price=float(restaurant_dict['price']),
-                    cuisine=cuisines[restaurant_dict['cuisine_id']]
-                )
+                try:
+                    restaurant: Restaurant = Restaurant(
+                        name=restaurant_dict['name'],
+                        customer_rating=int(
+                            restaurant_dict['customer_rating']),
+                        distance=float(restaurant_dict['distance']),
+                        average_price=float(restaurant_dict['price']),
+                        cuisine=cuisines[restaurant_dict['cuisine_id']]
+                    )
+                except:
+                    raise ValueError(
+                        f'Restaurant CSV csv/{self.restaurant_file_name} is incorrectly formatted')
 
                 # Only add if the restaurant meets the criteria
                 if self._is_valid_restaurant(restaurant, criteria):
@@ -98,5 +102,9 @@ class FilterRestaurantsCSVProgram(object):
         with open('csv/'+self.cuisine_file_name, 'r') as csvfile:
             cuisine_reader = csv.DictReader(csvfile)
             for cuisine in cuisine_reader:
-                cuisine_map[cuisine.get('id')] = cuisine.get('name')
+                try:
+                    cuisine_map[cuisine.get('id')] = cuisine.get('name')
+                except:
+                    raise ValueError(
+                        f'Cuisines CSV csv/{self.cuisine_file_name} is incorrectly formatted')
         return cuisine_map

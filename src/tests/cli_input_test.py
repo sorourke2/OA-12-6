@@ -42,7 +42,7 @@ class TestCommandLineInputValidity(unittest.TestCase):
         self.assertEqual(self.parser.parse_args(
             ['--customer-rating', '3']).customer_rating, 3)
         self.assertEqual(self.parser.parse_args(
-            ['--customer-rating', '0']).customer_rating, 0)
+            ['--customer-rating', '1']).customer_rating, 1)
 
         # defaults to None
         self.assertEqual(self.parser.parse_args([]).customer_rating, None)

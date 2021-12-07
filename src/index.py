@@ -28,11 +28,11 @@ def main(args) -> List[Restaurant]:
 
 def make_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description='Filter and display CSV Recipe data')
+        description='Filter and display CSV Recipe data given a set of criteria.')
     parser.add_argument('-f', '--restaurant-file', type=is_valid_csv_file,
-                        help='Restaurant CSV file name', default='restaurants.csv')
+                        help='Name of restaurant data csv located in src/csv. Must contain .csv', default='restaurants.csv')
     parser.add_argument('--cuisine-file', type=is_valid_csv_file,
-                        help='Cuisines CSV file name', default='cuisines.csv')
+                        help='Name of cuisines data csv located in src/csv. Must contain .csv', default='cuisines.csv')
     parser.add_argument(
         '-n',
         '--name',
@@ -40,13 +40,13 @@ def make_parser() -> argparse.ArgumentParser:
         help='Prefix of one of the words in the name of the restaurant, ignores case when filtering',
     )
     parser.add_argument('-d', '--distance',
-                        type=is_positive_float, help='Max distance in miles')
-    parser.add_argument('--customer-rating', metavar="[0-5]", choices=range(0, 6),
+                        type=is_positive_float, help='Max distance in miles to the restaurant')
+    parser.add_argument('--customer-rating', metavar="[1-5]", choices=range(1, 6),
                         type=int, help='Min customer rating out of 5 stars')
     parser.add_argument('-p', '--price',
-                        type=is_positive_float, help='Max price in US dollars')
+                        type=is_positive_float, help='Max price in US dollars for the average price')
     parser.add_argument('-c', '--cuisine', type=str,
-                        help='Prefix of one of the words in a cuisine, ignores case when filtering')
+                        help='Prefix of one of the words in a cuisine name, ignores case when filtering')
     return parser
 
 
