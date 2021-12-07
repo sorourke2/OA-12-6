@@ -19,7 +19,9 @@ Data is returned from the main() function run in index.py as well as displayed o
  - `python index.py -n grill -c korean`
  - `python index.py -n grill -c korean -p 15`
  - `python index.py -d 12 --customer-rating 5 -n delic`
- 
+ - `python index.py`
+ - `python index.py -f boston_restaurants.csv -d 6`
+
 ## Assumptions Made
 When looking at the criteria:
 #### Restaurant Name
