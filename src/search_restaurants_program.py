@@ -62,11 +62,11 @@ class FilterRestaurantsCSVProgram(object):
         '''
 
         # Print table header
-        print("\n{:<40}{:<20}{:<15}{:<19}{:<8}".format(
+        print("\n{:<60}{:<20}{:<15}{:<19}{:<8}".format(
             'Name', 'Rating (stars)', 'Distance (mi)', 'Avg. Price ($)', 'Cuisine'))
 
         for restaurant in restaurants:
-            print("{:<40}{:<20}{:<15}{:<19}{:<8}".format(
+            print("{:<60}{:<20}{:<15}{:<19}{:<8}".format(
                 restaurant.name, restaurant.customer_rating,  restaurant.distance,  restaurant.average_price,  restaurant.cuisine))
         print('\n')
 

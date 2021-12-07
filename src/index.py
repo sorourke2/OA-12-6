@@ -17,12 +17,16 @@ def main(args) -> List[Restaurant]:
         min_customer_rating=args.customer_rating,
         cuisine=args.cuisine
     )
+
     restaurant_file_name: str = args.restaurant_file
     cuisine_file_name: str = args.cuisine_file
+
     program = FilterRestaurantsCSVProgram(
         restaurant_file_name=restaurant_file_name, cuisine_file_name=cuisine_file_name)
+
     top_restaurants: List[Restaurant] = program.get_top_restaurants(criteria)
     program.display(top_restaurants)
+
     return top_restaurants
 
 
