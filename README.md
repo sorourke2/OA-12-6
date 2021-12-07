@@ -15,7 +15,7 @@ Implemented as a CLI program, the program allows the user to input criteria to f
 ## Assumptions Made
 When looking at the criteria:
 #### Restaurant Name
-Partial name matching on the cuisine only searches for prefixes. If a restaurant name is more than one word, the matching will check every word for prefixes. For example, if we are searching for "Gri", the two restaurants "Grill House" and "Steak Grill" will be included in the result. I believe this is better than just searching the first word for the prefix and better than looking for if the word is include ANYWHERE in the word (for example: searching "eak" and getting "Steak Grill").
+Partial name matching on the cuisine only searches for prefixes. The search is case-insensitive. If a restaurant name is more than one word, the matching will check every word for prefixes. For example, if we are searching for "Gri", the two restaurants "Grill House" and "Steak Grill" will be included in the result. I believe this is better than just searching the first word for the prefix and better than looking for if the word is include ANYWHERE in the word (for example: searching "eak" and getting "Steak Grill").
 
 #### Customer Rating(1 star ~ 5 stars)
 This will be an integer with a set range of 1-5
@@ -34,7 +34,3 @@ I went with the assumption that all Restaurants are unique. As in when we are fi
 
 ## Specifiying your own data
 Users can search through their own data by creating a csv in src/csv to parse and filter. The CSV must follow the same format as the given CSVs. Users can then specify the CSV to use by using the CLI. If no CSV is specified on the command line, the given CSVs are used. If a CSV has invalid format, an error is thrown.
-
-
-
-
