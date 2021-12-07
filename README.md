@@ -33,7 +33,7 @@ Exactly the same as Restaurant name, since cuisines.csv does not include every c
 I went with the assumption that all Restaurants are unique. As in when we are filtering the CSV, if all the data is the same between two restaurants, only one restaurant is considered. Therefore the output cannot contain two exact same restaurants.
 
 ## Specifiying your own data
-Users can search through their own data by creating a csv in src/csv to parse and filter. The CSV must follow the same format as the given CSVs. Users can then specify the CSV to use by using the CLI. If no CSV is specified on the command line, the given CSVs are used.
+Users can search through their own data by creating a csv in src/csv to parse and filter. The CSV must follow the same format as the given CSVs. Users can then specify the CSV to use by using the CLI. If no CSV is specified on the command line, the given CSVs are used. If a CSV has invalid format, an error is thrown.
 
 
 
