@@ -34,9 +34,11 @@ I went with the assumption that all Restaurants are unique. As in when we are fi
 ## Specifiying your own data
 Users can search through their own data by creating a csv in src/csv to parse and filter. The CSV must follow the same format as the given CSVs. Users can then specify the CSV to use by using the command line args. If no CSV is specified on the command line, the given CSVs are used. If a CSV has invalid format, an error is thrown.
 
+## Display Table Size
+Went with the assumption that there would not be a restaurant name or other data points large enough to mess with the formatting of the table. Determing the max string length of each of the data fields to dynamically expand column width seemed overkill.
 
 ## Specifications Pattern
-I included the ability to filter the recipes by chaining the criteria into more complex booleans by implementing the OrSpecification class and NotSpecification class. Although this ability is not functionally present in the program, I left it in to show that there the pattern can be used in the future for more complex querying.
+I included the ability to filter the recipes by chaining the criteria into more complex booleans by implementing the OrSpecification class and NotSpecification class. Although this ability is not functionally present in the program, I left it in to show that the pattern can be used in the future for more complex querying.
 (This pattern/implementation heavily inspired by http://sd.blackball.lv/library/Domain-Driven_Design_-_Tackling_Complexity_in_the_Heart_of_Software.pdf p.246, altered to fit into the context of this program)
 
 #
