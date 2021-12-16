@@ -17,7 +17,7 @@ class FilterRestaurantsCSVProgram(object):
         self.cuisine_file_name = cuisine_file_name
         self.restaurant_file_name = restaurant_file_name
 
-    def get_top_restaurants(self, criteria: RestaurantCriteria) -> Set[Restaurant]:
+    def get_best_matched_restaurants(self, criteria: RestaurantCriteria) -> Set[Restaurant]:
         '''
         Given a set of criteria, returns the top 5 Restaurants which satisfy
         the criteria.
@@ -32,7 +32,7 @@ class FilterRestaurantsCSVProgram(object):
         Criteria. Ensures that files are being read from the /csv file.
         '''
 
-        cuisines = self._build_cuisines_map()
+        cuisines: Dict[str, str] = self._build_cuisines_map()
         restaurants: Set[Restaurant] = set()
 
         with open('csv/'+self.restaurant_file_name, 'r') as csvfile:
@@ -78,7 +78,7 @@ class FilterRestaurantsCSVProgram(object):
         '''
 
         valid_restaurant = RestaurantIsRatedWellEnough() & RestaurantIsCloseEnough(
-        ) & RestaurantIsCheapEnough() & RestaurantIsTheRightCuisine() & RestaurantIsTheRightName() & RestaurantIsTheRightName()
+        ) & RestaurantIsCheapEnough() & RestaurantIsTheRightCuisine() & RestaurantIsTheRightName()
         return valid_restaurant.is_satisfied_by(restaurant, criteria)
 
     def _get_top_restaurants(self, restaurants: Set[Restaurant]) -> List[Restaurant]:

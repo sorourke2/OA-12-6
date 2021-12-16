@@ -24,7 +24,8 @@ def main(args) -> List[Restaurant]:
     program = FilterRestaurantsCSVProgram(
         restaurant_file_name=restaurant_file_name, cuisine_file_name=cuisine_file_name)
 
-    top_restaurants: List[Restaurant] = program.get_top_restaurants(criteria)
+    top_restaurants: List[Restaurant] = program.get_best_matched_restaurants(
+        criteria)
     program.display(top_restaurants)
 
     return top_restaurants
